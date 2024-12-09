@@ -1,0 +1,105 @@
+:root {
+  --verde: #00a149;
+  --blanco: #fff;
+  --rojo: #881014;
+  --oscuro: #000;
+
+  --titulos: "Arima", "roboto";
+  --parrafos: "Heebo";
+}
+* {
+  box-sizing: border-box;
+}
+/* globales */
+.contenedor {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+}
+h1,
+h2 {
+  font-family: var(--titulos);
+}
+h3,
+p,
+a {
+  font-family: var(--parrafos);
+}
+.rojo {
+  color: var(--rojo);
+}
+.verde {
+  color: var(--verde);
+}
+
+.contenido-navegacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.contenedor-navegacion {
+  background-color: var(--oscuro);
+  position: relative;
+  z-index: 5;
+}
+.logo h2,
+.navegacion a {
+  color: var(--blanco);
+}
+.logo h2 {
+  font-size: 1.8rem;
+}
+.navegacion a {
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+}
+.navegacion {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 20rem;
+  padding: 2rem 2rem;
+  background-color: var(--oscuro);
+}
+
+/* selector para elementos pares  */
+.navegacion a:nth-child(even):hover {
+  color: var(--rojo);
+}
+/* selector para elementos impares  */
+.navegacion a:nth-child(odd):hover {
+  color: var(--verde);
+}
+.oculto {
+  display: none; /* lo que hace es cocultar el contenido pero sin borrarlo  */
+}
+.menu-oculto span {
+  margin: 1px;
+  display: block;
+  height: 0.3rem;
+  width: 3rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--blanco);
+}
+.cerrar {
+  position: absolute;
+  top: 25px;
+  right: 50px;
+  color: var(--blanco);
+  user-select: none; /* esta opcione es para que cuando uno se pare encima de la etiqueta mno se selecione */
+}
+.cerrar:hover {
+  cursor: pointer;
+}
+.pantalla-completa {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+}
